@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tomcat-pod
+  labels:
+    type: appserver
+spec:
+  containers:
+    - name: mytomcat
+      image: tomee
+  tolerations:
+    - key: slave
+      operator: Equal
+      value: navya
+      effect: NoSchedule
